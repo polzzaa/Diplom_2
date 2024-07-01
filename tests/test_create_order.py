@@ -1,4 +1,4 @@
-from helpers import create_order, create_order_without_authorazation
+from helpers import create_order, create_order_without_authorization
 from data.ingredient import Ingredients
 from data.status_code import StatusCode
 
@@ -17,7 +17,7 @@ class TestCreateOrder:
     @allure.title('Тест на создание заказа без авторизации')
 
     def test_create_order_without_authorization(self):
-        response = create_order_without_authorazation(Ingredients.ingredients)
+        response = create_order_without_authorization(Ingredients.ingredients)
 
         assert response.status_code == StatusCode.OK and response.json()['success']
 

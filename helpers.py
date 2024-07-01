@@ -37,10 +37,12 @@ def change_data(payload):
 def change_data_without_autorization(payload):
     return requests.patch(MAIN_URL + CHANGE_DATA, data=payload)
 
+@allure.title('Создание заказа')
 def create_order(payload, login):
     return requests.post(MAIN_URL + CREATE_ORDER, data=payload,
                              headers={'Authorization': login.json()['accessToken']})
 
-def create_order_without_authorazation(payload):
+@allure.title('Создание заказа без авторизации')
+def create_order_without_authorization(payload):
     return requests.post(MAIN_URL + CREATE_ORDER, data=payload)
 
