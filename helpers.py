@@ -1,4 +1,4 @@
-from urls import MAIN_URL, CREATE_USER, LOGIN_USER, CHANGE_DATA
+from data.urls import MAIN_URL, CREATE_USER, LOGIN_USER, CHANGE_DATA, CREATE_ORDER
 
 import requests
 import faker
@@ -36,4 +36,11 @@ def change_data(payload):
 @allure.title('Изменение данных пользователя без авторизации')
 def change_data_without_autorization(payload):
     return requests.patch(MAIN_URL + CHANGE_DATA, data=payload)
+
+def create_order(payload, login):
+    return requests.post(MAIN_URL + CREATE_ORDER, data=payload,
+                             headers={'Authorization': login.json()['accessToken']})
+
+def create_order_without_authorazation(payload):
+    return requests.post(MAIN_URL + CREATE_ORDER, data=payload)
 

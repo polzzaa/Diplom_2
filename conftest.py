@@ -3,7 +3,7 @@ import pytest
 import faker
 import allure
 
-from urls import MAIN_URL, CREATE_USER, LOGIN_USER, DELETE_USER
+from data.urls import MAIN_URL, CREATE_USER, LOGIN_USER, DELETE_USER
 
 @allure.title('Создание пользователя')
 @pytest.fixture
