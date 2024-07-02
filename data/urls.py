@@ -1,0 +1,7 @@
+MAIN_URL = 'https://stellarburgers.nomoreparties.site'
+CREATE_USER = '/api/auth/register'
+DELETE_USER = '/api/auth/user'
+LOGIN_USER = '/api/auth/login'
+CHANGE_DATA = '/api/auth/user'
+CREATE_ORDER = '/api/orders'
+GET_ORDERS = '/api/orders'
